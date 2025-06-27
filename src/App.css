@@ -1,5 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #020001;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
 .App {
   text-align: center;
+  background: #020001;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-logo {
@@ -22,6 +46,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
 }
 
 .App-link {
@@ -35,4 +60,101 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.command-terminal {
+  width: 80%;
+  max-width: 700px;
+  min-height: 400px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-output {
+  height: 300px;
+  overflow-y: auto;
+  text-align: left;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-line {
+  margin: 4px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  color: #4caf50;
+}
+
+.terminal-line:nth-child(1) {
+  color: #3f9bfc;
+  font-weight: bold;
+}
+
+.command-form {
+  display: flex;
+  width: 100%;
+}
+
+.command-input {
+  flex-grow: 1;
+  padding: 12px;
+  background-color: #333;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  color: white;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+}
+
+.command-button {
+  padding: 12px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.command-button:hover {
+  background-color: #45a049;
+}
+
+.attendance-manager {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background: #020001;
+}
+
+.app-title {
+  color: #00cc99;
+  text-align: center;
+  padding: 8px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #333;
+}
+
+.app-container {
+  background: #020001;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
 }

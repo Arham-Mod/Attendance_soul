@@ -1,0 +1,461 @@
+.dashboard {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #050505, #101010, #050505);
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100%;
+  border: none;
+}
+
+.sidebar {
+  width: 160px;
+  background-color: #111;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-right: 1px solid #333;
+  height: 100%;
+}
+
+.sidebar-button {
+  background-color: transparent;
+  color: #00cc99;
+  border: 1px solid #333;
+  border-radius: 0;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Courier New', monospace;
+}
+
+.sidebar-button:hover {
+  background-color: #1e1e1e;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: linear-gradient(135deg, #050505, #101010, #050505);
+  color: #fff;
+}
+
+.attendance-display {
+  flex: 1;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.display-title {
+  color: #00cc99;
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+}
+
+.attendance-box {
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 0;
+  flex: 1;
+  margin-top: 10px;
+  padding: 15px;
+  text-align: left;
+  overflow-y: auto;
+}
+
+.subjects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.subject-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  border-bottom: 1px solid #222;
+  transition: all 0.2s ease;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.subject-item:hover {
+  background-color: #1a1a1a;
+}
+
+.subject-item.critical {
+  background: linear-gradient(to right, rgba(255, 102, 102, 0.05), rgba(255, 102, 102, 0.01));
+  border-left: 3px solid rgba(255, 102, 102, 0.8);
+}
+
+.subject-name {
+  font-size: 15px;
+  color: #eee;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.subject-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.subject-percentage {
+  font-size: 15px;
+  color: #00cc99;
+  font-weight: bold;
+}
+
+.subject-percentage.critical-text {
+  color: #ff6666;
+}
+
+.expand-button {
+  background: rgba(0, 204, 153, 0.1);
+  border: 1px solid rgba(0, 204, 153, 0.3);
+  color: #00cc99;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.expand-button:hover {
+  background: rgba(0, 204, 153, 0.2);
+  transform: scale(1.1);
+}
+
+.subject-goal-details {
+  background-color: #181818;
+  margin-top: 1px;
+  margin-bottom: 8px;
+  padding: 12px 15px;
+  border-radius: 0 0 4px 4px;
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+  animation: expandDetails 0.3s ease;
+}
+
+@keyframes expandDetails {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.goal-stat {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #333;
+}
+
+.goal-stat:last-child {
+  border-bottom: none;
+}
+
+.goal-label {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.goal-value {
+  color: #00cc99;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.goal-value.critical-text {
+  color: #ff6666;
+}
+
+.goal-warning {
+  background-color: rgba(255, 102, 102, 0.1);
+  color: #ff6666;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 13px;
+  border-left: 3px solid #ff6666;
+}
+
+.goal-achievement {
+  background-color: rgba(0, 204, 153, 0.05);
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 10px;
+  border-left: 3px solid rgba(0, 204, 153, 0.5);
+}
+
+.achievement-label {
+  color: #00cc99;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.achievement-progress {
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.achievement-bar {
+  height: 100%;
+  background: linear-gradient(to right, #00cc99, #00dd99);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.no-subjects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 170px;
+  color: #888;
+  font-size: 15px;
+  text-align: center;
+  padding: 0 20px;
+  font-family: 'Courier New', monospace;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  margin-top: auto;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.current-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.stats-title {
+  color: #00cc99;
+  font-size: 18px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: 'Courier New', monospace;
+}
+
+.percentage-box {
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 0;
+  padding: 12px 20px;
+  min-width: 100px;
+  transition: all 0.3s ease;
+}
+
+.percentage-box.critical-box {
+  background-color: rgba(255, 102, 102, 0.1);
+  border-color: rgba(255, 102, 102, 0.5);
+}
+
+.percentage-value {
+  color: #00cc99;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+}
+
+.critical-box .percentage-value {
+  color: #ff6666;
+}
+
+.timetable-button {
+  flex: 1;
+  height: 50px;
+  padding: 0 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.timetable-button:hover {
+  background-color: #43a047;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.timetable-button:disabled {
+  background-color: #9e9e9e;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Firebase indicator styles */
+.firebase-indicator {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: #039be5;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.firebase-dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.firebase-dot.connected {
+  background-color: #00c853;
+}
+
+.firebase-dot.connecting {
+  background-color: #ffd600;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+/* Loading indicator */
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: #666;
+  font-size: 16px;
+}
+
+/* Demo button styles */
+.demo-button {
+  flex: 1;
+  height: 50px;
+  padding: 0 20px;
+  background-color: #673ab7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.demo-button:hover {
+  background-color: #5e35b1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.demo-button:disabled {
+  background-color: #9e9e9e;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Update the action-buttons container */
+.action-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .timetable-button, .demo-button {
+    width: 100%;
+  }
+  
+  .stats-container {
+    padding: 0 10px;
+  }
+  
+  .current-stats {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .percentage-box {
+    width: 100%;
+    text-align: center;
+  }
+} 
