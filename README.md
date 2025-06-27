@@ -1,6 +1,6 @@
 # Attendance System
 
-A basic React application with a command-line interface to manage an attendance system. This application will be expanded in the future to include database connectivity and additional features.
+A basic React application to manage an attendance system. This application will be expanded in the future to include database connectivity and additional features.
 
 ## Features
 
